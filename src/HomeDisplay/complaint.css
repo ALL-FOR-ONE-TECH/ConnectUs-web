@@ -1,0 +1,366 @@
+.complaint-form-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fff5f0 0%, #ffffff 100%);
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.complaint-form-wrapper {
+  max-width: 600px;
+  width: 100%;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(255, 87, 34, 0.1);
+  overflow: hidden;
+  border: 1px solid rgba(255, 87, 34, 0.1);
+}
+
+/* Form Header */
+.form-header {
+  background: linear-gradient(135deg, var(--hero-burgundy) 0%, var(--hero-red) 100%);;
+  color: white;
+  padding: 3rem 2rem 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.header-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.form-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* Cooldown Message */
+.cooldown-message {
+  padding: 3rem 2rem;
+  text-align: center;
+  color: #FF5722;
+}
+
+.cooldown-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
+  border-radius: 50%;
+  margin-bottom: 2rem;
+  color: #FF5722;
+}
+
+.cooldown-message h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.cooldown-message p {
+  font-size: 1.1rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.cooldown-timer {
+  background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  border: 2px solid #FF5722;
+}
+
+.cooldown-timer span {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #FF5722;
+}
+
+/* Form Styles */
+.complaint-form {
+  padding: 2.5rem 2rem;
+}
+
+.form-group {
+  margin-bottom: 2rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.025em;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  font-size: 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  outline: none;
+  transition: all 0.3s ease;
+  background: white;
+  color: #2c3e50;
+  font-family: inherit;
+  resize: none;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: #FF5722;
+  box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.1);
+  transform: translateY(-1px);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #9ca3af;
+}
+
+.form-textarea {
+  min-height: 140px;
+  line-height: 1.6;
+}
+
+/* Submit Button */
+.submit-button {
+  width: 100%;
+background: linear-gradient(135deg, var(--hero-burgundy) 0%, var(--hero-red) 100%);;
+  color: white;
+  padding: 1.25rem 2rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(255, 87, 34, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  letter-spacing: 0.025em;
+}
+
+.submit-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(255, 87, 34, 0.4);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+}
+
+.submit-button:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.submit-button.submitting {
+  background: linear-gradient(135deg, #FF7043 0%, #FF8A65 100%);
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Message Styles */
+.message {
+  margin-top: 2rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.message.success {
+  background: linear-gradient(135deg, #E8F5E8 0%, #F1F8E9 100%);
+  color: #2E7D32;
+  border: 2px solid #4CAF50;
+}
+
+.message.error {
+  background: linear-gradient(135deg, #FFEBEE 0%, #FFCDD2 100%);
+  color: #C62828;
+  border: 2px solid #F44336;
+}
+
+.message-icon {
+  flex-shrink: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .complaint-form-container {
+    padding: 1rem;
+  }
+  
+  .complaint-form-wrapper {
+    border-radius: 16px;
+  }
+  
+  .form-header {
+    padding: 2rem 1.5rem 1.5rem;
+  }
+  
+  .header-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+  }
+  
+  .form-title {
+    font-size: 1.75rem;
+  }
+  
+  .form-subtitle {
+    font-size: 1rem;
+  }
+  
+  .complaint-form {
+    padding: 2rem 1.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-input,
+  .form-textarea {
+    padding: 0.875rem 1rem;
+  }
+  
+  .submit-button {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .cooldown-message {
+    padding: 2rem 1.5rem;
+  }
+  
+  .cooldown-icon {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .cooldown-message h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-title {
+    font-size: 1.5rem;
+  }
+  
+  .form-subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .complaint-form {
+    padding: 1.5rem 1rem;
+  }
+  
+  .form-header {
+    padding: 1.5rem 1rem 1rem;
+  }
+  
+  .header-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .cooldown-timer {
+    padding: 0.75rem 1rem;
+  }
+  
+  .cooldown-timer span {
+    font-size: 1rem;
+  }
+}
+
+/* Focus and Accessibility */
+.form-input:focus,
+.form-textarea:focus,
+.submit-button:focus {
+  outline: 2px solid #FF5722;
+  outline-offset: 2px;
+}
+
+/* Animation for form appearance */
+.complaint-form-wrapper {
+  animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover effects for better interactivity */
+.form-input:hover,
+.form-textarea:hover {
+  border-color: #FF7043;
+}
+
+.cooldown-message {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

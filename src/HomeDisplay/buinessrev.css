@@ -1,0 +1,294 @@
+.feedback-form-container {
+  min-height: 120vh;
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #fef7ed 0%, #fed7aa 100%);
+}
+
+.feedback-form {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px -12px rgba(120, 53, 15, 0.25);
+  padding: 3rem;
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+  overflow: hidden;
+  animation: slideInUp 0.6s ease-out;
+}
+
+.feedback-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #92400e, #b45309, #d97706, #f59e0b);
+}
+
+.company-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #fef3c7;
+}
+
+.company-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #78350f;
+  margin-bottom: 1rem;
+  letter-spacing: -0.025em;
+}
+
+.company-info h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #92400e;
+  margin-bottom: 0.5rem;
+}
+
+.feedback-form-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.input-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: #78350f;
+  font-size: 1rem;
+}
+
+.input-label svg {
+  color: #b45309;
+}
+
+.input-field,
+.input-textarea {
+  padding: 1rem 1.25rem;
+  border: 2px solid #fde68a;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #fffbeb;
+  color: #78350f;
+}
+
+.input-field:focus,
+.input-textarea:focus {
+  outline: none;
+  border-color: #d97706;
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.1);
+  background: #ffffff;
+}
+
+.input-field::placeholder,
+.input-textarea::placeholder {
+  color: #a16207;
+}
+
+.input-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.rating-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.stars-wrapper {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.star {
+  padding: 0.5rem;
+}
+
+.button-submit {
+  background: linear-gradient(135deg, #92400e 0%, #b45309 100%);
+  color: white;
+  border: none;
+  padding: 1.25rem 2rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(146, 64, 14, 0.3);
+}
+
+.button-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 12px -1px rgba(146, 64, 14, 0.4);
+  background: linear-gradient(135deg, #7c2d12 0%, #92400e 100%);
+}
+
+.button-submit:active {
+  transform: translateY(0);
+}
+
+.button-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.button-submit.submitting {
+  background: linear-gradient(135deg, #a16207 0%, #ca8a04 100%);
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .feedback-form-container {
+    padding: 1rem;
+  }
+
+  .feedback-form {
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+  }
+
+  .company-header h1 {
+    font-size: 2rem;
+  }
+
+  .company-info h2 {
+    font-size: 1.25rem;
+  }
+
+  .feedback-form-content {
+    gap: 1.5rem;
+  }
+
+  .input-field,
+  .input-textarea {
+    padding: 0.875rem 1rem;
+  }
+
+  .stars-wrapper {
+    justify-content: center;
+  }
+
+  .button-submit {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .feedback-form {
+    padding: 1.5rem 1rem;
+    margin: 0.5rem;
+  }
+
+  .company-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .company-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .input-label {
+    font-size: 0.9rem;
+  }
+
+  .input-field,
+  .input-textarea {
+    font-size: 0.9rem;
+  }
+
+  .rating-container {
+    align-items: center;
+  }
+}
+
+/* Hover and Focus Enhancements */
+.input-group:focus-within .input-label {
+  color: #b45309;
+}
+
+.input-group:focus-within .input-label svg {
+  color: #d97706;
+}
+
+/* Animation for form appearance */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Subtle interactions */
+.input-field:hover,
+.input-textarea:hover {
+  border-color: #f59e0b;
+}
+
+.feedback-form:hover {
+  box-shadow: 0 32px 64px -12px rgba(120, 53, 15, 0.3);
+}
+
+/* Professional typography */
+.feedback-form * {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Enhanced accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .feedback-form,
+  .button-submit {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* Focus styles for accessibility */
+.input-field:focus,
+.input-textarea:focus,
+.button-submit:focus {
+  outline: 2px solid #d97706;
+  outline-offset: 2px;
+}

@@ -1,0 +1,258 @@
+.al-admin-login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.al-admin-login-wrapper {
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+}
+
+.al-admin-login-form {
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.al-admin-login-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+background: linear-gradient(135deg, var(--hero-burgundy) 0%, var(--hero-red) 100%);;
+}
+
+.al-form-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.al-logo-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, var(--hero-burgundy) 0%, var(--hero-red) 100%);
+  border-radius: 16px;
+  margin-bottom: 1rem;
+  box-shadow: 0 8px 16px rgba(255, 107, 53, 0.3);
+}
+
+.al-logo-icon {
+  color: white;
+}
+
+.al-form-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 0.5rem 0;
+}
+
+.al-form-subtitle {
+  color: #666;
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.al-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.al-input-group {
+  position: relative;
+}
+
+.al-form-input {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border: 2px solid #e5e5e5;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #fafafa;
+  box-sizing: border-box;
+}
+
+.al-form-input:focus {
+  outline: none;
+  border-color: #ff6b35;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+  transform: translateY(-1px);
+}
+
+.al-form-input::placeholder {
+  color: #999;
+}
+
+.al-submit-button {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(135deg, var(--hero-burgundy) 0%, var(--hero-red) 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.al-submit-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+}
+
+.al-submit-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.al-submit-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.al-submit-button.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.al-message {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 0.5rem;
+  animation: slideIn 0.3s ease;
+}
+
+.al-message.success {
+  background: #d4f4d4;
+  color: #166534;
+  border: 1px solid #86efac;
+}
+
+.al-message.error {
+  background: #fecaca;
+  color: #dc2626;
+  border: 1px solid #fca5a5;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.al-form-footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+.al-form-footer p {
+  color: #666;
+  font-size: 0.75rem;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .al-admin-login-container {
+    padding: 1rem 0.75rem;
+  }
+
+  .al-admin-login-form {
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+  }
+
+  .al-form-title {
+    font-size: 1.5rem;
+  }
+
+  .al-logo-container {
+    width: 56px;
+    height: 56px;
+  }
+
+  .al-form-input,
+  .al-submit-button {
+    padding: 0.875rem 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .al-admin-login-form {
+    padding: 1.5rem 1rem;
+  }
+
+  .al-form-title {
+    font-size: 1.375rem;
+  }
+}
+
+/* Enhanced accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .al-form-input,
+  .al-submit-button,
+  .al-message {
+    transition: none;
+    animation: none;
+  }
+
+  .al-submit-button:hover:not(:disabled) {
+    transform: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .al-form-input {
+    border-color: #333;
+  }
+
+  .al-form-input:focus {
+    border-color: #000;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3);
+  }
+}
