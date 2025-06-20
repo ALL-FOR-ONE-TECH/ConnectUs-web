@@ -8,7 +8,7 @@ const AdminReviewLinks = () => {
 
   const fetchBusinesses = () => {
     setLoading(true);
-    fetch('http://localhost:5000/connectus-api/reviews/Review-businesses', {
+    fetch('https://connectus.net.in/connectus-api/reviews/Review-businesses', {
       credentials: 'include', // Correct way to send session cookies
     })
       .then(async (res) => {
@@ -42,7 +42,7 @@ const AdminReviewLinks = () => {
   };
 
   const generateLink = () => {
-    fetch('http://localhost:5000/connectus-api/reviews/review-link/generate-for-all', {
+    fetch('https://connectus.net.in/connectus-api/reviews/review-link/generate-for-all', {
       method: 'POST',
       credentials: 'include', // Correct here too!
       headers: {

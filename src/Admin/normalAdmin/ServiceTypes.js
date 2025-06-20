@@ -13,7 +13,7 @@ const ServiceTypes = () => {
 
   const fetchServices = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/connectus-api/adminservice/service-types', {
+      const res = await axios.get('https://connectus.net.in/connectus-api/adminservice/service-types', {
         withCredentials: true,
       });
       setServices(res.data);
@@ -40,7 +40,7 @@ const ServiceTypes = () => {
     setLoading(true);
     try {
       await axios.post(
-        'http://localhost:5000/connectus-api/adminservice/service-types',
+        'https://connectus.net.in/connectus-api/adminservice/service-types',
         { name, icon: iconUrl },
         { withCredentials: true }
       );
@@ -65,7 +65,7 @@ const ServiceTypes = () => {
 
     setLoading(true);
     try {
-      await axios.delete(`http://localhost:5000/connectus-api/adminservice/service-types/${id}`, {
+      await axios.delete(`https://connectus.net.in/connectus-api/adminservice/service-types/${id}`, {
         params: { totp },
         withCredentials: true,
       });

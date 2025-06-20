@@ -24,7 +24,7 @@ const BusinessManager = () => {
 
   const fetchBusinesses = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/connectus-api/adminbusiness/businesses', {
+      const res = await axios.get('https://connectus.net.in/connectus-api/adminbusiness/businesses', {
         withCredentials: true,
       });
       setBusinesses(res.data);
@@ -36,7 +36,7 @@ const BusinessManager = () => {
 
   const fetchServiceTypes = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/connectus-api/adminservice/service-types', {
+      const res = await axios.get('https://connectus.net.in/connectus-api/adminservice/service-types', {
         withCredentials: true,
       });
       setServiceTypes(res.data);
@@ -122,7 +122,7 @@ const BusinessManager = () => {
       if (editingId) {
         console.log('Updating business with ID:', editingId);
         response = await axios.put(
-          `http://localhost:5000/connectus-api/adminbusiness/businesses/${editingId}`,
+          `https://connectus.net.in/connectus-api/adminbusiness/businesses/${editingId}`,
           formData,
           {
             withCredentials: true,
@@ -133,7 +133,7 @@ const BusinessManager = () => {
       } else {
         console.log('Creating new business');
         response = await axios.post(
-          'http://localhost:5000/connectus-api/adminbusiness/businesses',
+          'https://connectus.net.in/connectus-api/adminbusiness/businesses',
           formData,
           {
             withCredentials: true,
@@ -213,7 +213,7 @@ const BusinessManager = () => {
 
   const handleDeleteConfirm = async () => {
     try {
-      await axios.delete(`http://localhost:5000/connectus-api/adminbusiness/businesses/${deletingId}`, {
+      await axios.delete(`https://connectus.net.in/connectus-api/adminbusiness/businesses/${deletingId}`, {
         withCredentials: true,
         data: { totp },
       });
@@ -475,7 +475,7 @@ const BusinessManager = () => {
                           {b.image.map((img, i) => (
                             <img
                               key={i}
-                              src={`http://localhost:5000${img}`}
+                              src={`https://connectus.net.in${img}`}
                               alt="Business"
                               className="bm-business-image"
                             />
@@ -739,7 +739,7 @@ const BusinessManager = () => {
     //                 {b.image.map((img, i) => (
     //                   <img
     //                     key={i}
-    //                     src={`http://localhost:5000${img}`}
+    //                     src={`https://connectus.net.in${img}`}
     //                     alt="Business"
     //                     style={{ 
     //                       width: '80px', 

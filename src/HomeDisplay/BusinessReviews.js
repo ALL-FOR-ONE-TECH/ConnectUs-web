@@ -17,7 +17,7 @@ const BusinessReviews = () => {
 
   useEffect(() => {
     // Fetch business info from review link
-    fetch(`http://localhost:5000/connectus-api/reviews/review-link/${code}/business`)
+    fetch(`https://connectus.net.in/connectus-api/reviews/review-link/${code}/business`)
       .then((res) => res.json())
       .then((data) => {
         if (data.error) {
@@ -37,7 +37,7 @@ const BusinessReviews = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch(`http://localhost:5000/connectus-api/reviews/review-link/${code}/review`, {
+    fetch(`https://connectus.net.in/connectus-api/reviews/review-link/${code}/review`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
