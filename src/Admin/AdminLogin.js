@@ -9,29 +9,43 @@ const AdminLogin = () => {
     password: '',
     totp: '',
   });
-  const navigate = useNavigate;
+    const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+    totp: '',
+  });
   const [message, setMessage] = useState('');
   const [success, setSuccess] = useState(false);
- const [isLoading, setIsLoading] = useState(false);//frontend
+  const [isLoading, setIsLoading] = useState(false);
+
   const handleChange = e => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async e => {
-    navigate('/adm-ConnectUs/admin-home')
-    e.preventDefault();
+    e.preventDefault(); // Always prevent default FIRST
     setMessage('');
     setSuccess(false);
-    setIsLoading(false); // frontend
+    setIsLoading(true); // Show loading spinner
+
     try {
-      const res = await axios.post('https://connectus.net.in/connectus-api/adminauth/admin-login', formData, {
-        withCredentials: true,
-      });
+      const res = await axios.post(
+        'https://connectus.net.in/connectus-api/adminauth/admin-login',
+        formData,
+        { withCredentials: true } // ✅ Must be present to send cookies
+      );
 
       setMessage(res.data.message);
       setSuccess(true);
+
+      // Optional: You could store `res.data.user` in context or global state
+      navigate('/adm-ConnectUs/admin-home'); // ✅ Navigate only on success
     } catch (err) {
       setMessage(err.response?.data?.message || 'Login failed');
+      setSuccess(false);
+    } finally {
+      setIsLoading(false);
     }
   };
 
