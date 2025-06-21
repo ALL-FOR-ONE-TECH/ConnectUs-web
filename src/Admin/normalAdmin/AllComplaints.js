@@ -16,7 +16,7 @@ const AllComplaints = () => {
 
   const fetchComplaints = async () => {
     try {
-      const response = await axios.get('https://connectus.net.in/connectus-api/complaints//Get-allcomplaints',{credentials: 'include'}); // adjust base URL if needed
+      const response = await axios.get('https://connectus.net.in/connectus-api/complaints/Get-allcomplaints',{credentials: 'include'}); // adjust base URL if needed
       setComplaints(response.data);
       setLoading(false);
     } catch (err) {
