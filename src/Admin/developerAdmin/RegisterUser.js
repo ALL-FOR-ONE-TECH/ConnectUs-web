@@ -6,7 +6,7 @@ function RegisterUser() {
     name: '',
     email: '',
     password: '',
-    role: 'admin',
+    role: 'developer-admin',
   });
 
   const [qrCodeURL, setQrCodeURL] = useState('');
