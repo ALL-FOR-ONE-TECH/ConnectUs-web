@@ -4,12 +4,8 @@ import { Shield } from 'lucide-react';
 import './adminlog.css'; // Import your CSS file for styling
 import { useNavigate } from 'react-router-dom';
 const AdminLogin = () => {
-  const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-    totp: '',
-  });
-    const navigate = useNavigate();
+ 
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
