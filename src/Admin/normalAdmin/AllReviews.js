@@ -15,7 +15,7 @@ const AllReviews = () => {
 
   const fetchReviews = async () => {
     try {
-      const response = await axios.get('https://connectus.net.in/connectus-api/reviews/all-submitted-reviews',{credentials: 'include'}); // Adjust base URL if needed
+      const response = await axios.get('https://connectus.net.in/connectus-api/reviews/Review-businesses',{withCredentials: true}); // Adjust base URL if needed
       setReviews(response.data);
       setLoading(false);
     } catch (err) {
